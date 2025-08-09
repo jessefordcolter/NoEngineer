@@ -1,0 +1,25 @@
+# .github/workflows/deploy.yml
+name: Deploy MkDocs
+
+on:
+  push:
+    branches: [ main ]
+
+permissions:
+  contents: write  # needed for pushing to gh-pages
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+
+      - name: Install dependencies
+        run: pip install mkdocs-material
+
+      - name: Build and deploy
+        run: mkdocs gh-deploy --force
