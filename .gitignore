@@ -1,0 +1,22 @@
+# Obsidian
+.obsidian/
+.trash/
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Logs
+scripts/logs/*.log
+*.log
+
+# Python
+__pycache__/
+*.pyc
+site/
+
+# Temporary files
+*.tmp
+*.swp
+*~
